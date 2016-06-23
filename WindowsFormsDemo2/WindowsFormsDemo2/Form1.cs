@@ -15,7 +15,7 @@ namespace WindowsFormsDemo2
     {
         int timeLeft = 60;
         bool q1Correct = false;
-        bool q2Correct = true;
+        bool q2Correct = false;
         bool q3Correct = false;
 
 
@@ -23,6 +23,11 @@ namespace WindowsFormsDemo2
         public Form1()
         {
             InitializeComponent();
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;
+
+            groupBox1.Visible = false;
+            groupBox2.Visible = false; 
 
         }
 
@@ -100,6 +105,50 @@ namespace WindowsFormsDemo2
             else
             {
                 labelQ1Feedback.Text = "";
+            }
+        }
+
+        private void radioButtonQ2A1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonQ2A1.Checked)
+            {
+                labelQ2Feedback.ForeColor = Color.Green;
+                labelQ2Feedback.Text = "\u00fc"; //tick
+                q2Correct = true;
+            }
+            else
+            {
+                labelQ2Feedback.Text = "";
+            }
+                
+        }
+
+        private void radioButtonQ2A2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonQ2A2.Checked)
+            {
+                labelQ2Feedback.ForeColor = Color.Red;
+                labelQ2Feedback.Text = "\u00fb"; //cross
+                q2Correct = false;
+
+            }
+            else
+            {
+                labelQ2Feedback.Text = "";
+            }
+        }
+
+        private void radioButtonQ2A3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonQ2A3.Checked)
+            {
+                labelQ2Feedback.ForeColor = Color.Red;
+                labelQ2Feedback.Text = "\u00fb"; //cross
+                q2Correct = false;
+            }
+            else
+            {
+                labelQ2Feedback.Text = "";
             }
         }
     }
